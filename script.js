@@ -1,5 +1,9 @@
 $('#run').click(function() {
-  // var b64 = btoa()
-  // alert(b64)
-  $('#result').attr('srcdoc', $('#indexhtml').val())
+  console.log($('#indexhtml').val())
+  $('#result').attr('srcdoc', editor.getValue())
+})
+var editor = ace.edit('indexhtml', {
+  mode: "ace/mode/html",
+  wrap:true,
+  theme:'ace/theme/monokai'
 })
