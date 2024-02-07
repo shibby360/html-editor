@@ -1,4 +1,4 @@
 $('#run').click(function() {
     var b64 = btoa($('#index.html').val())
-    $('#result').attr('src', b64)
+    $('#result').attr('src', 'data:text/html;base64,' + b64)
 })
