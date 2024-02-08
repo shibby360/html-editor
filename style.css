@@ -1,4 +1,4 @@
-* {
+*:not(.editors) {
   position: relative;
   font-family: sans-serif;
 }
