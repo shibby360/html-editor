@@ -1,6 +1,5 @@
 * {
   position: relative;
-  
 }
 body:not(.editors) {
   font-family: sans-serif;
@@ -19,4 +18,7 @@ body:not(.editors) {
   left: 500px;
   width: 500px;
   height: 400px;
+}
+.g-signin2 {
+  top: -390px;
 }
