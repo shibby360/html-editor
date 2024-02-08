@@ -10,3 +10,13 @@ body:not(.editors) {
   width: 500px;
   height: 400px;
 }
+#run {
+  top: -825px;
+  left: 500px;
+}
+#result {
+  top: -400px;
+  left: 500px;
+  width: 500px;
+  height: 400px;
+}

@@ -7,6 +7,7 @@ var editor = ace.edit('indexhtml', {
   wrap:true,
   theme:'ace/theme/monokai'
 })
+var auth2 = gapi.auth2.getAuthInstance();
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
   console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
