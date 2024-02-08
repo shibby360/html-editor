@@ -1,5 +1,8 @@
-*:not(.editors) {
+* {
   position: relative;
+  
+}
+*:not(.editors) {
   font-family: sans-serif;
 }
 #indexhtml {
