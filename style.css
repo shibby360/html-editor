@@ -2,7 +2,7 @@
   position: relative;
   
 }
-*:not(.editors) {
+body:not(.editors) {
   font-family: sans-serif;
 }
 #indexhtml {
