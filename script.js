@@ -20,11 +20,15 @@ $('#openfilepicker').click(function(ev) {
         editor.setValue(fr.result)
       }
       saveFileHandle = fileHandle
+      var permsprom = saveFileHandle.requestPermission({ mode: "readwrite" })
     })
   })
 })
-$('#savebtn').click(function(ev) {
-  fileHandle.requestPermission({ mode: "readwrite" });
+$('#savebtn').click(async function(ev) {
+  var writable = await saveFileHandle.createWritable()
+  await writable.write(editor.getValue())
+  await writable.close()
+  console.log('finished saving')
 })
 var auth2 = gapi.auth2.getAuthInstance();
 function onSignIn(googleUser) {
