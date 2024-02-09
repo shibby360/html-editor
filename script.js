@@ -21,6 +21,7 @@ $('#openfilepicker').click(function(ev) {
       }
       saveFileHandle = fileHandle
       var permsprom = saveFileHandle.requestPermission({ mode: "readwrite" })
+      $('#savebtn').show()
     })
   })
 })
