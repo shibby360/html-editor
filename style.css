@@ -35,3 +35,6 @@ body:not(.editors) {
 #savebtn {
   top: 35px;
 }
+#save-cr {
+  left: 125px;
+}

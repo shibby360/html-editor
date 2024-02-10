@@ -1,14 +1,15 @@
 var saveFileHandle
 $('#run').click(function(ev) {
-  console.log($('#indexhtml').val())
   $('#result').attr('srcdoc', editor.getValue())
 })
 var editor = ace.edit('indexhtml', {
   mode: "ace/mode/html",
-  wrap:true,
-  theme:'ace/theme/monokai'
+  wrap: true,
+  theme: 'ace/theme/monokai'
 })
 $('#openfilepicker').click(function(ev) {
+  var conf = confirm('This will overwrite your current code. Continue(you can press "save code to new file" to save your current code)?')
+  if(!conf) {return}
   var filePick = showOpenFilePicker()
   filePick.then(function(fileHandleLst) {
     var fileHandle = fileHandleLst[0]
@@ -22,6 +23,7 @@ $('#openfilepicker').click(function(ev) {
       saveFileHandle = fileHandle
       var permsprom = saveFileHandle.requestPermission({ mode: "readwrite" })
       $('#savebtn').show()
+      $('#savebtn').text(`Save code to current file(${file.name})`)
     })
   })
 })
@@ -30,6 +32,14 @@ $('#savebtn').click(async function(ev) {
   await writable.write(editor.getValue())
   await writable.close()
   console.log('finished saving')
+})
+$('#save-cr').click(function(ev) {
+  const link = document.createElement("a");
+  const downloadfile = new Blob([editor.getValue()], { type: 'text/html' });
+  link.href = URL.createObjectURL(downloadfile);
+  link.download = prompt('save file as(.html not needed)?: ') + '.html';
+  link.click();
+  URL.revokeObjectURL(link.href);
 })
 // var auth2 = gapi.auth2.getAuthInstance();
 function onSignIn(googleUser) {
