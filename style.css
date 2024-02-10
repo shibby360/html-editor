@@ -38,3 +38,7 @@ body:not(.editors) {
 #save-cr {
   left: 125px;
 }
+#opennewtab {
+  top: 54px;
+  left: 939px;
+}

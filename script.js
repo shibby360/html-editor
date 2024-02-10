@@ -41,6 +41,10 @@ $('#save-cr').click(function(ev) {
   link.click();
   URL.revokeObjectURL(link.href);
 })
+$('#opennewtab').click(function(ev) {
+  var newtab = window.open()
+  newtab.document.write(editor.getValue())
+})
 // var auth2 = gapi.auth2.getAuthInstance();
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
