@@ -8,7 +8,7 @@ var editor = ace.edit('indexhtml', {
   theme: 'ace/theme/monokai'
 })
 $('#openfilepicker').click(function(ev) {
-  var conf = confirm('This will overwrite your current code. Continue(you can press "save code to new file" to save your current code)?')
+  var conf = confirm('This will overwrite your current code. Continue)?')
   if(!conf) {return}
   var filePick = showOpenFilePicker()
   filePick.then(function(fileHandleLst) {
@@ -23,7 +23,7 @@ $('#openfilepicker').click(function(ev) {
       saveFileHandle = fileHandle
       var permsprom = saveFileHandle.requestPermission({ mode: "readwrite" })
       $('#savebtn').show()
-      $('#savebtn').text(`Save code to current file(${file.name})`)
+      $('#filename').text(file.name)
     })
   })
 })

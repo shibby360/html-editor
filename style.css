@@ -1,3 +1,6 @@
+:root {
+  --workspace: 200px;
+}
 body > * {
   position: absolute;
 }
@@ -6,12 +9,13 @@ body:not(.editors) {
 }
 #indexhtml {
   top: 70px;
+  left: var(--workspace);
   width: 500px;
   height: 400px;
 }
 #run {
   top: 10px;
-  left: 500px;
+  left: calc(500px + var(--workspace));
   color: lightgreen;
   background-color: darkgreen;
   border-radius: 12px;
@@ -25,7 +29,7 @@ body:not(.editors) {
 }
 #result {
   top: 75px;
-  left: 550px;
+  left: calc(550px + var(--workspace));
   width: 500px;
   height: 400px;
 }
@@ -40,5 +44,20 @@ body:not(.editors) {
 }
 #opennewtab {
   top: 54px;
-  left: 939px;
+  left: calc(939px + var(--workspace));
+}
+#filename {
+  top: 42px;
+  left: calc(10px + var(--workspace));
+}
+#sidebar {
+  top: 78px;
+}
+#sidebar > ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+ul > li > button {
+  width: calc(var(--workspace) - 10px);
 }

@@ -9,10 +9,15 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <button id="openfilepicker">Open file</button>
-  <button id='savebtn' style="display: none;">Save code to current file</button>
-  <button id="save-cr">Save code to new file</button>
+  <div id="sidebar">
+    <ul>
+      <li><button id="openfilepicker">Open file</button></li>
+      <li><button id='savebtn' style="display: none;">Save code to current file</button></li>
+      <li><button id="save-cr">Save code to new file</button></li>
+    </ul>
+  </div>
   <button id="opennewtab">Open in new tab</button>
+  <p id="filename">New file</p>
   <div id='indexhtml' class="editors">&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
