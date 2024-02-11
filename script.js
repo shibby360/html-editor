@@ -8,9 +8,20 @@ var editor = ace.edit('indexhtml', {
   theme: 'ace/theme/monokai'
 })
 $('#openfilepicker').click(function(ev) {
-  var conf = confirm('This will overwrite your current code. Continue)?')
+  var conf = confirm('This will overwrite your current code. Continue?')
   if(!conf) {return}
-  var filePick = showOpenFilePicker()
+  var filePick = showOpenFilePicker({
+    types: [
+      {
+        description: "HTML files",
+        accept: {
+          "text/*": [".html"],
+        },
+      },
+    ],
+    excludeAcceptAllOption: true,
+    multiple: false,
+  })
   filePick.then(function(fileHandleLst) {
     var fileHandle = fileHandleLst[0]
     var fileprom = fileHandle.getFile()
