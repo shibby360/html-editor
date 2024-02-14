@@ -1,5 +1,6 @@
 :root {
   --workspace: 200px;
+  --whgt: 550px;
 }
 body > * {
   position: absolute;
@@ -11,7 +12,8 @@ body:not(.editors) {
   top: 70px;
   left: var(--workspace);
   width: 500px;
-  height: 400px;
+  height: var(--whgt);
+  font-size: 14px;
 }
 #run {
   top: 10px;
@@ -31,7 +33,7 @@ body:not(.editors) {
   top: 75px;
   left: calc(550px + var(--workspace));
   width: 500px;
-  height: 400px;
+  height: var(--whgt);
 }
 .g-signin2 {
   top: 500px;
