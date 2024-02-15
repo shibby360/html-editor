@@ -39,12 +39,12 @@ $('#openfilepicker').click(function(ev) {
   })
 })
 $('#savebtn').click(async function(ev) {
-  $(document.body).css('cursor', 'wait')
+  $('body, body *').css('cursor', 'wait')
   var writable = await saveFileHandle.createWritable()
   await writable.write(editor.getValue())
   await writable.close()
   console.log('finished saving')
-  $(document.body).css('cursor', 'default')
+  $('body, body *').css('cursor', 'default')
 })
 $('#save-cr').click(function(ev) {
   const link = document.createElement("a");
